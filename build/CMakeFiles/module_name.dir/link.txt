@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -flto -shared  -o module_name.cpython-310-x86_64-linux-gnu.so CMakeFiles/module_name.dir/src/app/bindings.cpp.o  /usr/lib/x86_64-linux-gnu/libtbb.so.12.5 -lyaml-cpp 

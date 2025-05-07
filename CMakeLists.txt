@@ -52,7 +52,7 @@ endif()
 
 
 # ------------------- Pybind11 Module ------------------- #
-pybind11_add_module(module_name MODULE src/app/bindings.cpp)
-target_sources(module_name PRIVATE ${LIB_SRC})
-target_link_libraries(module_name PRIVATE ${COMMON_LIBRARIES})
-target_include_directories(module_name PRIVATE ${COMMON_INCLUDES})
+pybind11_add_module(mr76_radar MODULE MR76_Radar/src/mr76_radar.cpp)
+target_sources(mr76_radar PRIVATE ${LIB_SRC})
+target_link_libraries(mr76_radar PRIVATE ${COMMON_LIBRARIES})
+target_include_directories(mr76_radar PRIVATE ${COMMON_INCLUDES})

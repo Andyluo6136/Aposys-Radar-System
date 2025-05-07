@@ -1,7 +1,7 @@
-import sys
-sys.path.append("build")
+# import sys
+# sys.path.append("build")
 
-import module_name
-dir(module_name)
+# import module_name
+# dir(module_name)
 
-print(module_name.add(3, 5))
+# print(module_name.add(3, 5))
