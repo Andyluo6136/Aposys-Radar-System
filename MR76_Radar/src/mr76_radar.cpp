@@ -1,4 +1,5 @@
 #include "mr76_radar.h"
+#include <pybind11/pybind11.h>
 
 // MR76::MR76(){
 //     _total_objects = 0;
@@ -90,4 +91,13 @@ int MR76::isready(){
     else {
         return 0;
     }
+}
+
+int add(int a, int b){
+    return a + b;
+}
+
+PYBIND11_MODULE(radar_modules, rm){
+    rm.doc() = "Radar module";
+    rn.def("bazinga", &add, "add two integers");
 }
