@@ -1,7 +1,7 @@
 import sys
 sys.path.append("build")
 
-import module_name
-dir(module_name)
+import radar_modules
+dir(radar_modules)
 
-print(module_name.add(3, 5))
+print(radar_modules.bazinga(2, 6))
