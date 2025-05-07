@@ -42,17 +42,17 @@ file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/*.cpp)
 
 # Anything that ends in /main.cpp is **not** part of the reusable core
 set(LIB_SRC ${SRC_FILES})
-list(FILTER LIB_SRC EXCLUDE REGEX ".*/test1\\.cpp$")
+list(FILTER LIB_SRC EXCLUDE REGEX ".*/mr76_radar\\.cpp$")
 
 # ------------------- Building the executable ------------------- #
-if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/app/bindings.cpp")
-    message(FATAL_ERROR "BUILDING EXECUTABLE but src/app/bindings.cpp not found")
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}MR76_radar/src/mr76_radar.cpp")
+    message(FATAL_ERROR "BUILDING EXECUTABLE but MR76_radar/src/mr76_radar.cpp not found")
 endif()
 
 
 
 # ------------------- Pybind11 Module ------------------- #
-pybind11_add_module(module_name MODULE src/app/bindings.cpp)
-target_sources(module_name PRIVATE ${LIB_SRC})
-target_link_libraries(module_name PRIVATE ${COMMON_LIBRARIES})
-target_include_directories(module_name PRIVATE ${COMMON_INCLUDES})
+pybind11_add_module(radar_modules MODULE MR76_radar/src/mr76_radar.cpp)
+target_sources(radar_modules PRIVATE ${LIB_SRC})
+target_link_libraries(radar_modules PRIVATE ${COMMON_LIBRARIES})
+target_include_directories(radar_modules PRIVATE ${COMMON_INCLUDES})
