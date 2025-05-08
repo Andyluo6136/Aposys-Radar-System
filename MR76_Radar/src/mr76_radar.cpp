@@ -99,5 +99,5 @@ int add(int a, int b){
 
 PYBIND11_MODULE(radar_modules, rm){
     rm.doc() = "Radar module";
-    rn.def("bazinga", &add, "add two integers");
+    rm.def("bazinga", &add, "add two integers");
 }
