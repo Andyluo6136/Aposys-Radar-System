@@ -4,4 +4,6 @@ sys.path.append("build")
 import radar_modules
 dir(radar_modules)
 
-print(radar_modules.bazinga(2, 6))
+rar = radar_modules.MR76()
+
+print(rar.skip_cycle)

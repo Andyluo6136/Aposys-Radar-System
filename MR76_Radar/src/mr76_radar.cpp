@@ -1,5 +1,7 @@
 #include "mr76_radar.h"
 #include <pybind11/pybind11.h>
+#include <iostream>
+namespace py = pybind11;
 
 // MR76::MR76(){
 //     _total_objects = 0;
@@ -7,6 +9,7 @@
 //     object_counter = 0;
 // }
 
+MR76::MR76() {}
 void MR76::parse_data(int id, int len, unsigned char rxBuf[8]){
     if(id & 0x60B == 0x60B and len == 8){
         int16_t data_stream[8]; // stream of extracted bits defining data
@@ -93,11 +96,25 @@ int MR76::isready(){
     }
 }
 
-int add(int a, int b){
-    return a + b;
+int sub(int a, int b){
+    return a-b;
 }
 
-PYBIND11_MODULE(radar_modules, rm){
-    rm.doc() = "Radar module";
-    rn.def("bazinga", &add, "add two integers");
+PYBIND11_MODULE(radar_modules, m) {
+    m.doc() = "Example pybind11 module named module_name";
+
+
+    py::class_<MR76>(m, "MR76")
+        .def(py::init<>())
+        .def("parse_data", &MR76::parse_data, "parse_data")
+        .def("configure", &MR76::configure, "configure")
+        .def("isready", &MR76::isready, "isready")
+
+        // Expose fields
+        .def_readwrite("skip_cycle", &MR76::skip_cycle)
+        .def_readwrite("total_objects", &MR76::total_objects)
+        .def_readwrite("object_detected", &MR76::object_detected)
+        .def_readwrite("cycles", &MR76::cycles)
+        .def_readwrite("is_object_complete", &MR76::is_object_complete)
+    ;
 }

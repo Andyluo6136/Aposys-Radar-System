@@ -2,7 +2,7 @@
 #define __MR76_RADAR_H__
 
 #include <stdint.h>
-
+#include <pybind11/pybind11.h>
 
 #define ARRAY_SIZE 32
 
@@ -35,6 +35,7 @@ class MR76 {
 
 // -------------------------------------------------------
     public :
+    MR76();
     void parse_data(int id, int len, unsigned char buffer[8]);      //input data from can periodically
     void configure(unsigned long int *id, unsigned char _buffer[8],
                     int previous_id, int max_distance, int sensor_id, int output_type, int radar_power, int sort_index);
