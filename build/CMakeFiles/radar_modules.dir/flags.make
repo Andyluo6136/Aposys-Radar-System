@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dradar_modules_EXPORTS
 
-CXX_INCLUDES = -I/home/aposys2/Documents/Pybind_project/Aposys-Radar-System/include -isystem /usr/include/python3.10
+CXX_INCLUDES = -I/home/aposys1/Aposys-Radar-System/include -isystem /usr/include/python3.10
 
 CXX_FLAGS = -O3 -DNDEBUG -fPIC -fvisibility=hidden -O3 -DNDEBUG -flto -fno-fat-lto-objects -std=c++17
 

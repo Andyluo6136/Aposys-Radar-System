@@ -102,11 +102,7 @@ int sub(int a, int b){
 
 PYBIND11_MODULE(radar_modules, m) {
     m.doc() = "Example pybind11 module named module_name";
-    .def(py::init<>())
-    .def("parse_data", &MR76::parse_data, "parse_data")
-    .def("configure", &MR76::configure, "configure")
-    .def("isready", &MR76::isready, "isready")
-
+    
     py::class_<MR76>(m, "MR76")
         .def(py::init<>())
         .def("parse_data", &MR76::parse_data, "parse_data")
