@@ -11,7 +11,7 @@ class MR76 {
 
 
 
-    private :
+    public :
     
     struct mr76_data{
     uint8_t id;     
@@ -47,7 +47,7 @@ class MR76 {
     int cycles;                                                     // How many cycles/frame passed
                                                                         // not affected by skip
     int is_object_complete;                                         // To check if the total objects match                   
-    mr76_data object[ARRAY_SIZE];                                   // Container of each object data
+    std::array<mr76_data, ARRAY_SIZE> object1;                  // Container of each object data
     int isready();                                                  // Check if current frame data is available
 
 };

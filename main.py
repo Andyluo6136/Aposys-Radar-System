@@ -6,4 +6,5 @@ dir(radar_modules)
 
 rar = radar_modules.MR76()
 
-print(rar.skip_cycle)
+
+print(rar.object1[0].id)

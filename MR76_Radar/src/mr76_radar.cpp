@@ -1,5 +1,6 @@
 #include "mr76_radar.h"
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 #include <iostream>
 namespace py = pybind11;
 
@@ -49,7 +50,7 @@ void MR76::update_data(){
     is_ready = is_object_complete;
     object_detected = object_counter;
     for (int iter = 0; iter < object_counter; iter++){
-        object[iter]=_object[iter];
+        object1[iter]=_object[iter];
     }
     this->total_objects = _total_objects;
     this->cycles = _cycles;
@@ -86,6 +87,7 @@ void MR76::configure(unsigned long int *id, unsigned char _buffer[8] ,int previo
     _buffer[4] = (radar_power << 5) | (output_type << 3) | (sensor_id);
     _buffer[5] = (0x01 << 7) | (sort_index << 4);
 }
+
 int MR76::isready(){
     if (is_ready != 2 and cycles%(skip_cycle + 1) == 0){
         is_ready = 2;
@@ -96,24 +98,30 @@ int MR76::isready(){
     }
 }
 
-int sub(int a, int b){
-    return a-b;
-}
 
 PYBIND11_MODULE(radar_modules, m) {
-    m.doc() = "Example pybind11 module named module_name";
-    
+    // Bind the nested struct first
+    py::class_<MR76::mr76_data>(m, "mr76_data")
+        .def(py::init<>())
+        .def_readwrite("id", &MR76::mr76_data::id)
+        .def_readwrite("distance_long", &MR76::mr76_data::distance_long)
+        .def_readwrite("distance_lat", &MR76::mr76_data::distance_lat)
+        .def_readwrite("velocity_long", &MR76::mr76_data::velocity_long)
+        .def_readwrite("velocity_lat", &MR76::mr76_data::velocity_lat)
+        .def_readwrite("obj_section", &MR76::mr76_data::obj_section)
+        .def_readwrite("obj_state", &MR76::mr76_data::obj_state)
+        .def_readwrite("rcs", &MR76::mr76_data::rcs);
+
+    // Then bind the main class
     py::class_<MR76>(m, "MR76")
         .def(py::init<>())
         .def("parse_data", &MR76::parse_data, "parse_data")
         .def("configure", &MR76::configure, "configure")
         .def("isready", &MR76::isready, "isready")
-
-        // Expose fields
         .def_readwrite("skip_cycle", &MR76::skip_cycle)
         .def_readwrite("total_objects", &MR76::total_objects)
         .def_readwrite("object_detected", &MR76::object_detected)
         .def_readwrite("cycles", &MR76::cycles)
         .def_readwrite("is_object_complete", &MR76::is_object_complete)
-    ;
+        .def_readwrite("object1", &MR76::object1);  // Make sure name matches variable
 }
