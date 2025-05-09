@@ -1,4 +1,5 @@
 import sys
+import usbcan
 sys.path.append("build")
 
 import radar_modules

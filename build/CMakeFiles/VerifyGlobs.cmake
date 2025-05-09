@@ -14,8 +14,6 @@ endif()
 # SRC_FILES at CMakeLists.txt:41 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/aposys1/Aposys-Radar-System/src/*.cpp")
 set(OLD_GLOB
-  "/home/aposys1/Aposys-Radar-System/src/app/bindings.cpp"
-  "/home/aposys1/Aposys-Radar-System/src/test1.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

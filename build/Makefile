@@ -154,54 +154,6 @@ MR76_Radar/src/mr76_radar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.s
 .PHONY : MR76_Radar/src/mr76_radar.cpp.s
 
-src/app/bindings.o: src/app/bindings.cpp.o
-.PHONY : src/app/bindings.o
-
-# target to build an object file
-src/app/bindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o
-.PHONY : src/app/bindings.cpp.o
-
-src/app/bindings.i: src/app/bindings.cpp.i
-.PHONY : src/app/bindings.i
-
-# target to preprocess a source file
-src/app/bindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/app/bindings.cpp.i
-.PHONY : src/app/bindings.cpp.i
-
-src/app/bindings.s: src/app/bindings.cpp.s
-.PHONY : src/app/bindings.s
-
-# target to generate assembly for a file
-src/app/bindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/app/bindings.cpp.s
-.PHONY : src/app/bindings.cpp.s
-
-src/test1.o: src/test1.cpp.o
-.PHONY : src/test1.o
-
-# target to build an object file
-src/test1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/test1.cpp.o
-.PHONY : src/test1.cpp.o
-
-src/test1.i: src/test1.cpp.i
-.PHONY : src/test1.i
-
-# target to preprocess a source file
-src/test1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/test1.cpp.i
-.PHONY : src/test1.cpp.i
-
-src/test1.s: src/test1.cpp.s
-.PHONY : src/test1.s
-
-# target to generate assembly for a file
-src/test1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/test1.cpp.s
-.PHONY : src/test1.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -214,12 +166,6 @@ help:
 	@echo "... MR76_Radar/src/mr76_radar.o"
 	@echo "... MR76_Radar/src/mr76_radar.i"
 	@echo "... MR76_Radar/src/mr76_radar.s"
-	@echo "... src/app/bindings.o"
-	@echo "... src/app/bindings.i"
-	@echo "... src/app/bindings.s"
-	@echo "... src/test1.o"
-	@echo "... src/test1.i"
-	@echo "... src/test1.s"
 .PHONY : help
 
 

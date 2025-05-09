@@ -83,50 +83,18 @@ CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aposys1/Aposys-Radar-System/MR76_Radar/src/mr76_radar.cpp -o CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.s
 
-CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o: CMakeFiles/radar_modules.dir/flags.make
-CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o: ../src/app/bindings.cpp
-CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o: CMakeFiles/radar_modules.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aposys1/Aposys-Radar-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o -MF CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o.d -o CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o -c /home/aposys1/Aposys-Radar-System/src/app/bindings.cpp
-
-CMakeFiles/radar_modules.dir/src/app/bindings.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/radar_modules.dir/src/app/bindings.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aposys1/Aposys-Radar-System/src/app/bindings.cpp > CMakeFiles/radar_modules.dir/src/app/bindings.cpp.i
-
-CMakeFiles/radar_modules.dir/src/app/bindings.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/radar_modules.dir/src/app/bindings.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aposys1/Aposys-Radar-System/src/app/bindings.cpp -o CMakeFiles/radar_modules.dir/src/app/bindings.cpp.s
-
-CMakeFiles/radar_modules.dir/src/test1.cpp.o: CMakeFiles/radar_modules.dir/flags.make
-CMakeFiles/radar_modules.dir/src/test1.cpp.o: ../src/test1.cpp
-CMakeFiles/radar_modules.dir/src/test1.cpp.o: CMakeFiles/radar_modules.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aposys1/Aposys-Radar-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/radar_modules.dir/src/test1.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/radar_modules.dir/src/test1.cpp.o -MF CMakeFiles/radar_modules.dir/src/test1.cpp.o.d -o CMakeFiles/radar_modules.dir/src/test1.cpp.o -c /home/aposys1/Aposys-Radar-System/src/test1.cpp
-
-CMakeFiles/radar_modules.dir/src/test1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/radar_modules.dir/src/test1.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aposys1/Aposys-Radar-System/src/test1.cpp > CMakeFiles/radar_modules.dir/src/test1.cpp.i
-
-CMakeFiles/radar_modules.dir/src/test1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/radar_modules.dir/src/test1.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aposys1/Aposys-Radar-System/src/test1.cpp -o CMakeFiles/radar_modules.dir/src/test1.cpp.s
-
 # Object files for target radar_modules
 radar_modules_OBJECTS = \
-"CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.o" \
-"CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o" \
-"CMakeFiles/radar_modules.dir/src/test1.cpp.o"
+"CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.o"
 
 # External object files for target radar_modules
 radar_modules_EXTERNAL_OBJECTS =
 
 radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.o
-radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o
-radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/src/test1.cpp.o
 radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/build.make
 radar_modules.cpython-310-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libtbb.so.12.5
 radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aposys1/Aposys-Radar-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared module radar_modules.cpython-310-x86_64-linux-gnu.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aposys1/Aposys-Radar-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module radar_modules.cpython-310-x86_64-linux-gnu.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/radar_modules.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/strip /home/aposys1/Aposys-Radar-System/build/radar_modules.cpython-310-x86_64-linux-gnu.so
 
