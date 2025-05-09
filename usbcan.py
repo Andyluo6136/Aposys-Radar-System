@@ -5,8 +5,6 @@ import time
 import sys
 sys.path.append("build")
 
-import radar_modules
-
 
 lib = cdll.LoadLibrary("./libusbcan.so")
 
