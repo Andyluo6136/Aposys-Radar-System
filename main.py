@@ -2,16 +2,17 @@ import sys
 import usbcan
 from ctypes import *
 import threading
+sys.path.append('build')
+
 import radar_modules
 
-sys.path.append("build")
 
 dir(radar_modules)
 
 rar = radar_modules.MR76()
 
 
-lib = cdll.LoadLibrary("./libusbcan.so")
+lib = cdll.LoadLibrary("./usbcan/libusbcan.so")
 
 USBCAN_I = c_uint32(3)   # USBCAN-I/I+ 3
 USBCAN_II = c_uint32(4)  # USBCAN-II/II+ 4
