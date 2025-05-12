@@ -1,6 +1,6 @@
 # ApoSys Radar System
 
-The ApoSys Radar System helps with collision avoidance for railroad companies using the latest radar technology.
+The ApoSys Radar System helps with collision avoidance for railroad companies using the latest, cutting edge, groundbreaking, advanced radar technology.
 
 ## Installation
 
