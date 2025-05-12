@@ -130,29 +130,29 @@ radar_modules/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/build
 .PHONY : radar_modules/fast
 
-Radar_Files/src/mr76_radar.o: Radar_Files/src/mr76_radar.cpp.o
-.PHONY : Radar_Files/src/mr76_radar.o
+radar_files/src/mr76_radar.o: radar_files/src/mr76_radar.cpp.o
+.PHONY : radar_files/src/mr76_radar.o
 
 # target to build an object file
-Radar_Files/src/mr76_radar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o
-.PHONY : Radar_Files/src/mr76_radar.cpp.o
+radar_files/src/mr76_radar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o
+.PHONY : radar_files/src/mr76_radar.cpp.o
 
-Radar_Files/src/mr76_radar.i: Radar_Files/src/mr76_radar.cpp.i
-.PHONY : Radar_Files/src/mr76_radar.i
+radar_files/src/mr76_radar.i: radar_files/src/mr76_radar.cpp.i
+.PHONY : radar_files/src/mr76_radar.i
 
 # target to preprocess a source file
-Radar_Files/src/mr76_radar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.i
-.PHONY : Radar_Files/src/mr76_radar.cpp.i
+radar_files/src/mr76_radar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.i
+.PHONY : radar_files/src/mr76_radar.cpp.i
 
-Radar_Files/src/mr76_radar.s: Radar_Files/src/mr76_radar.cpp.s
-.PHONY : Radar_Files/src/mr76_radar.s
+radar_files/src/mr76_radar.s: radar_files/src/mr76_radar.cpp.s
+.PHONY : radar_files/src/mr76_radar.s
 
 # target to generate assembly for a file
-Radar_Files/src/mr76_radar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.s
-.PHONY : Radar_Files/src/mr76_radar.cpp.s
+radar_files/src/mr76_radar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.s
+.PHONY : radar_files/src/mr76_radar.cpp.s
 
 # Help Target
 help:
@@ -163,9 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... radar_modules"
-	@echo "... Radar_Files/src/mr76_radar.o"
-	@echo "... Radar_Files/src/mr76_radar.i"
-	@echo "... Radar_Files/src/mr76_radar.s"
+	@echo "... radar_files/src/mr76_radar.o"
+	@echo "... radar_files/src/mr76_radar.i"
+	@echo "... radar_files/src/mr76_radar.s"
 .PHONY : help
 
 

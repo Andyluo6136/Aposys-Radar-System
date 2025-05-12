@@ -69,28 +69,28 @@ include CMakeFiles/radar_modules.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/radar_modules.dir/flags.make
 
-CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o: CMakeFiles/radar_modules.dir/flags.make
-CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o: ../Radar_Files/src/mr76_radar.cpp
-CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o: CMakeFiles/radar_modules.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aposys2/Documents/pb11_test/Aposys-Radar-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o -MF CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o.d -o CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o -c /home/aposys2/Documents/pb11_test/Aposys-Radar-System/Radar_Files/src/mr76_radar.cpp
+CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o: CMakeFiles/radar_modules.dir/flags.make
+CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o: ../radar_files/src/mr76_radar.cpp
+CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o: CMakeFiles/radar_modules.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aposys2/Documents/pb11_test/Aposys-Radar-System/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o -MF CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o.d -o CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o -c /home/aposys2/Documents/pb11_test/Aposys-Radar-System/radar_files/src/mr76_radar.cpp
 
-CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aposys2/Documents/pb11_test/Aposys-Radar-System/Radar_Files/src/mr76_radar.cpp > CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.i
+CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aposys2/Documents/pb11_test/Aposys-Radar-System/radar_files/src/mr76_radar.cpp > CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.i
 
-CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aposys2/Documents/pb11_test/Aposys-Radar-System/Radar_Files/src/mr76_radar.cpp -o CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.s
+CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aposys2/Documents/pb11_test/Aposys-Radar-System/radar_files/src/mr76_radar.cpp -o CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.s
 
 # Object files for target radar_modules
 radar_modules_OBJECTS = \
-"CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o"
+"CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o"
 
 # External object files for target radar_modules
 radar_modules_EXTERNAL_OBJECTS =
 
-radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o
+radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o
 radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/build.make
 radar_modules.cpython-310-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/libtbb.so.12.5
 radar_modules.cpython-310-x86_64-linux-gnu.so: CMakeFiles/radar_modules.dir/link.txt
