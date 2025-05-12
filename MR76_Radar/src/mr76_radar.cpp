@@ -103,15 +103,15 @@ PYBIND11_MODULE(radar_modules, m) {
     // Bind the nested struct first
     py::class_<MR76::mr76_data>(m, "mr76_data")
         .def(py::init<>())
-        .def_readwrite("id", &MR76::mr76_data::id)
-        .def_readwrite("distance_long", &MR76::mr76_data::distance_long)
-        .def_readwrite("distance_lat", &MR76::mr76_data::distance_lat)
-        .def_readwrite("velocity_long", &MR76::mr76_data::velocity_long)
-        .def_readwrite("velocity_lat", &MR76::mr76_data::velocity_lat)
-        .def_readwrite("obj_section", &MR76::mr76_data::obj_section)
-        .def_readwrite("obj_state", &MR76::mr76_data::obj_state)
-        .def_readwrite("rcs", &MR76::mr76_data::rcs);
-
+        .def_readonly("id", &MR76::mr76_data::id)
+        .def_readonly("distance_long", &MR76::mr76_data::distance_long)
+        .def_readonly("distance_lat", &MR76::mr76_data::distance_lat)
+        .def_readonly("velocity_long", &MR76::mr76_data::velocity_long)
+        .def_readonly("velocity_lat", &MR76::mr76_data::velocity_lat)
+        .def_readonly("obj_section", &MR76::mr76_data::obj_section)
+        .def_readonly("obj_state", &MR76::mr76_data::obj_state)
+        .def_readonly("rcs", &MR76::mr76_data::rcs);
+    
     // Then bind the main class
     py::class_<MR76>(m, "MR76")
         .def(py::init<>())
