@@ -9,6 +9,7 @@ import radar_modules
 dir(radar_modules)
 
 radar = radar_modules.MR76()
+data = radar_modules.mr76_data()
 lib = cdll.LoadLibrary("./libusbcan.so")
 
 USBCAN_I = c_uint32(3)   # USBCAN-I/I+ 3
@@ -108,7 +109,11 @@ def rx_thread(DEVCIE_TYPE, DevIdx, chn_idx):
                 print("")
                 #print(list(can[i].Data))
                 radar.parse_data(can[i].ID, can[i].DataLen, can[i].Data[0], can[i].Data[1], can[i].Data[2], can[i].Data[3], can[i].Data[4], can[i].Data[5], can[i].Data[6], can[i].Data[7])
-                #print(radar.distance_long)
+                for i in range(radar.total_objects-1):
+                    print(i)
+                    print("distance: ",radar.object1[i].distance_long)
+
+                
 
 
 if __name__ == "__main__":

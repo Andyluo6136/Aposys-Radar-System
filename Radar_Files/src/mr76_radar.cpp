@@ -26,7 +26,8 @@ void MR76::parse_data(int id, int len, unsigned int int1, unsigned int int2, uns
 
     
     
-    if(id & 0x60B == 0x60B and len == 8){
+    if ((id & 0x60B) == 0x60B && len == 8){
+
 
         int16_t data_stream[8]; // stream of extracted bits defining data
       
@@ -49,10 +50,14 @@ void MR76::parse_data(int id, int len, unsigned int int1, unsigned int int2, uns
         _object_data.rcs = float(data_stream[7]*0.5 - 64.0);
         _object[object_counter] = _object_data;
         object_counter ++;
+
         std::cout<<static_cast<int>(_object_data.distance_long) <<std::endl;
 
+
     }
-    else if (id & 0x60A == 0x60A and len == 8){
+
+    else if ((id & 0x60A) == 0x60A && len == 8){
+
         update_data();
         object_counter = 0;
         _total_objects = a;
@@ -113,6 +118,8 @@ int MR76::isready(){
         return 0;
     }
 }
+
+
 
 
 PYBIND11_MODULE(radar_modules, m) {
