@@ -45,14 +45,14 @@ set(LIB_SRC ${SRC_FILES})
 list(FILTER LIB_SRC EXCLUDE REGEX ".*/mr76_radar\\.cpp$")
 
 # ------------------- Building the executable ------------------- #
-if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/MR76_Radar/src/mr76_radar.cpp")
-    message(FATAL_ERROR "BUILDING EXECUTABLE but MR76_Radar/src/mr76_radar.cpp not found")
+if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Radar_Files/src/mr76_radar.cpp")
+    message(FATAL_ERROR "BUILDING EXECUTABLE but Radar_Files/src/mr76_radar.cpp not found")
 endif()
 
 
 
 # ------------------- Pybind11 Module ------------------- #
-pybind11_add_module(radar_modules MODULE MR76_Radar/src/mr76_radar.cpp)
+pybind11_add_module(radar_modules MODULE Radar_Files/src/mr76_radar.cpp)
 target_sources(radar_modules PRIVATE ${LIB_SRC})
 target_link_libraries(radar_modules PRIVATE ${COMMON_LIBRARIES})
 target_include_directories(radar_modules PRIVATE ${COMMON_INCLUDES})

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.o"
-  "CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.o.d"
+  "CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o"
+  "CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o.d"
   "radar_modules.cpython-310-x86_64-linux-gnu.so"
   "radar_modules.pdb"
 )

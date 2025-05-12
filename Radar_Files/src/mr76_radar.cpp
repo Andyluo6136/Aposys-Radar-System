@@ -11,19 +11,33 @@ namespace py = pybind11;
 // }
 
 MR76::MR76() {}
-void MR76::parse_data(int id, int len, unsigned char rxBuf[8]){
+
+
+void MR76::parse_data(int id, int len, unsigned int int1, unsigned int int2, unsigned int int3, unsigned int int4, unsigned int int5, unsigned int int6, unsigned int int7,unsigned int int8){
+
+    unsigned char a = static_cast<unsigned char>(int1); // char1 will be 65 ('A')
+    unsigned char b = static_cast<unsigned char>(int2); // char2 will be 44 (300 % 256)
+    unsigned char c = static_cast<unsigned char>(int3); // char3 will be 246 (-10 + 256)
+    unsigned char d = static_cast<unsigned char>(int4); // char1 will be 65 ('A')
+    unsigned char e = static_cast<unsigned char>(int5); // char2 will be 44 (300 % 256)
+    unsigned char f = static_cast<unsigned char>(int6); // char3 will be 246 (-10 + 256)
+    unsigned char g = static_cast<unsigned char>(int7); // char1 will be 65 ('A')
+    unsigned char h = static_cast<unsigned char>(int8); // char2 will be 44 (300 % 256)
+
+    
+    
     if(id & 0x60B == 0x60B and len == 8){
+
         int16_t data_stream[8]; // stream of extracted bits defining data
       
-        data_stream[0] = rxBuf[0];                                                            // object id
-        data_stream[1] = int16_t(((rxBuf[1] << 8) | (rxBuf[2] & 0xF8)) >> 3);                 // distance long
-        data_stream[2] = int16_t((rxBuf[2] & 0x07) << 8 | rxBuf[3]);                          // distance lat
-        data_stream[3] = int16_t(((rxBuf[4] << 8) | (rxBuf[5] & 0xC0)) >> 6);                 // Vrelative long
-        data_stream[4] = int16_t(((((rxBuf[5] & 0x3F) << 8) | (rxBuf[6] & 0xE0))) >> 5);      // Vrelative lat
-        data_stream[5] = int16_t((rxBuf[6] & 0x18) >> 3);                                     // Object class
-        data_stream[6] = int16_t(rxBuf[6] & 0x07);                                            // Object dynamic prop
-        data_stream[7] = rxBuf[7];
-
+        data_stream[0] = a;                                                            // object id
+        data_stream[1] = int16_t(((b << 8) | (c & 0xF8)) >> 3);                 // distance long
+        data_stream[2] = int16_t((c & 0x07) << 8 | d);                          // distance lat
+        data_stream[3] = int16_t(((e << 8) | (f & 0xC0)) >> 6);                 // Vrelative long
+        data_stream[4] = int16_t(((((f & 0x3F) << 8) | (g & 0xE0))) >> 5);      // Vrelative lat
+        data_stream[5] = int16_t((g & 0x18) >> 3);                                     // Object class
+        data_stream[6] = int16_t(g & 0x07);                                            // Object dynamic prop
+        data_stream[7] = h;
 
         _object_data.id = int(data_stream[0])+1;
         _object_data.distance_long= float(data_stream[1]*0.2 - 500);
@@ -35,12 +49,14 @@ void MR76::parse_data(int id, int len, unsigned char rxBuf[8]){
         _object_data.rcs = float(data_stream[7]*0.5 - 64.0);
         _object[object_counter] = _object_data;
         object_counter ++;
+        std::cout<<static_cast<int>(_object_data.distance_long) <<std::endl;
+
     }
     else if (id & 0x60A == 0x60A and len == 8){
         update_data();
         object_counter = 0;
-        _total_objects = rxBuf[0];
-        _cycles = int16_t((rxBuf[1] << 8 )| (rxBuf[2]));
+        _total_objects = a;
+        _cycles = int16_t((b << 8 )| (c));
     }
 }
 

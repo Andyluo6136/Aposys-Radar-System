@@ -3,15 +3,18 @@ from ctypes import *
 import threading
 import time
 import sys
-sys.path.append("build")
+sys.path.append('build')
+import radar_modules
 
+dir(radar_modules)
 
+radar = radar_modules.MR76()
 lib = cdll.LoadLibrary("./libusbcan.so")
 
 USBCAN_I = c_uint32(3)   # USBCAN-I/I+ 3
 USBCAN_II = c_uint32(4)  # USBCAN-II/II+ 4
-MAX_CHANNELS = 2         # 通道最大数量
-g_thd_run = 1            # 线程运行标志
+MAX_CHANNELS = 2         # Maximum number of channels
+g_thd_run = 1            # Thread running flag
 
 
 class ZCAN_CAN_BOARD_INFO(Structure):
@@ -84,43 +87,50 @@ def rx_thread(DEVCIE_TYPE, DevIdx, chn_idx):
     global g_thd_run
     while g_thd_run == 1:
         time.sleep(0.1)
-        count = lib.VCI_GetReceiveNum(DEVCIE_TYPE, DevIdx, chn_idx) # 获取缓冲区报文数量
+        count = lib.VCI_GetReceiveNum(DEVCIE_TYPE, DevIdx, chn_idx) # Get num of messages in the buffer
         if count > 0:
-            print("缓冲区报文数量: %d" % count)
+            print("Number of messages in buffer: %d" % count)
             can = (ZCAN_CAN_OBJ * count)()
-            rcount = lib.VCI_Receive(DEVCIE_TYPE, DevIdx, chn_idx, byref(can), count, 100) # 读报文
+            rcount = lib.VCI_Receive(DEVCIE_TYPE, DevIdx, chn_idx, byref(can), count, 100) # 读报文 Read the message
             for i in range(rcount):
-                print("[%d] %d ID: 0x%x " %(can[i].TimeStamp, chn_idx, can[i].ID), end='')
-                print("%s " %("扩展帧" if can[i].ExternFlag == 1 else "标准帧"), end='')
+
+                #ID 
+                # print("[%d] %d ID: 0x%x " %(can[i].TimeStamp, chn_idx, can[i].ID), end='')
+                print("ID", can[i].ID)
+                print("%s " %("Extended frame" if can[i].ExternFlag == 1 else "Standard frame"), end='')
                 if can[i].RemoteFlag == 0:
                     print(" Data: ", end='')
+                    #print(can[i].Data[1])
                     for j in range(can[i].DataLen):
                         print("%02x "% can[i].Data[j], end='')
                 else:
-                    print(" 远程帧", end='')
+                    print(" remote frame", end='')
                 print("")
+                #print(list(can[i].Data))
+                radar.parse_data(can[i].ID, can[i].DataLen, can[i].Data[0], can[i].Data[1], can[i].Data[2], can[i].Data[3], can[i].Data[4], can[i].Data[5], can[i].Data[6], can[i].Data[7])
+                #print(radar.distance_long)
 
 
 if __name__ == "__main__":
     threads = []
-    # 波特率这里的十六进制数字，可以由“zcanpro 波特率计算器”计算得出
-    gBaud = 0x1c00          # 波特率 0x1400-1M(75%), 0x1c00-500k(87.5%), 0x1c01-250k(87.5%), 0x1c03-125k(87.5%)
-    DevType = USBCAN_II     # 设备类型号
-    DevIdx = 0              # 设备索引号
+    #The baud rate here is a hexadecimal number which can be calculated by 'zcanpro baud rate calculator'
+    gBaud = 0x1c00          # baud rate 0x1400-1M(75%), 0x1c00-500k(87.5%), 0x1c01-250k(87.5%), 0x1c03-125k(87.5%)
+    DevType = USBCAN_II     # device type num
+    DevIdx = 0              # device index num
 
-    # 打开设备
-    ret = lib.VCI_OpenDevice(DevType, DevIdx, 0)   # 设备类型，设备索引，保留参数
+    # open device
+    ret = lib.VCI_OpenDevice(DevType, DevIdx, 0)   # device type, device index, reserved parameters
     if ret == 0:
         print("Open device fail")
         exit(0)
     else:
         print("Opendevice success")
 
-    # # 获取设备信息
+    # get device information
     # info = GetDeviceInf(USBCAN_II, 0)
     # print("Devcie Infomation:\n%s" % (info))
 
-    # 初始化，启动通道
+    # initialize, start channel
     for i in range(MAX_CHANNELS):
         init_config = ZCAN_CAN_INIT_CONFIG()
         init_config.AccCode = 0
@@ -143,18 +153,18 @@ if __name__ == "__main__":
             print("StartCAN(%d) success" % i)
             
         thread = threading.Thread(target=rx_thread, args=(DevType, DevIdx, i,))
-        threads.append(thread) # 独立接收线程
+        threads.append(thread) # Independant recieving thread
         thread.start()
 
-    # 测试发送
-    send_len = 10  # 发送帧数量
+    # Test sending
+    send_len = 10  # num of frames to send
     msgs = (ZCAN_CAN_OBJ * send_len)()
     for i in range(send_len):
         msgs[i].ID = 0x100
-        msgs[i].SendType = 0    # 发送方式 0-正常, 1-单次, 2-自发自收
-        msgs[i].RemoteFlag = 0  # 0-数据帧 1-远程帧
-        msgs[i].ExternFlag = 0  # 0-标准帧 1-扩展帧
-        msgs[i].DataLen = 8     # 数据长度 1~8
+        msgs[i].SendType = 0    # Sending mode 0-normal 1-single 2-self-send and self-recieve
+        msgs[i].RemoteFlag = 0  # 0-data frame 1-remote frame
+        msgs[i].ExternFlag = 0  # 0-standard frame 1- extended frame
+        msgs[i].DataLen = 8     # data length 1-8
         for j in range(msgs[i].DataLen):
             msgs[i].Data[j] = j
     send_ret = lib.VCI_Transmit(DevType, 0, 0, byref(msgs), send_len)
@@ -164,15 +174,15 @@ if __name__ == "__main__":
     else:
         print("Transmit fail, sendcounet is: %d " % send_ret)
 
-    # 阻塞等待
+    # block waiting
     input()
     g_thd_run = 0
 
-    # 等待所有线程完成
+    # wait for all threads to complete
     for thread in threads:
         thread.join()
 
-    # 复位通道
+    # reset channel
     for i in range(MAX_CHANNELS):
         ret = lib.VCI_ResetCAN(DevType, DevIdx, i)
         if ret == 0:
@@ -180,7 +190,7 @@ if __name__ == "__main__":
         else:
             print("ResetCAN(%d) success" % i)
 
-    # 关闭设备
+    # Shutdown device
     ret = lib.VCI_CloseDevice(DevType, DevIdx)
     if ret == 0:
         print("Closedevice fail")
