@@ -21,3 +21,8 @@ The ApoSys Radar System helps with collision avoidance for railroad companies us
 ## Usage
 
 To execute, run the `main.py` file located in the `src` directory.
+
+```bash
+cd src
+sudo python3 main.py
+```
