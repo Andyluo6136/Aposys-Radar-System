@@ -10,6 +10,14 @@ The ApoSys Radar System helps with collision avoidance for railroad companies us
    git clone https://github.com/Andyluo6136/Aposys-Radar-System
    cd Aposys-Radar-System
    ```
+   
+2. **Build:**
+
+   ```bash
+   cmake -B build
+   cmake --build build
+   ```
+   
 ## Usage
 
 To execute, run the `main.py` file located in the `src` directory.
