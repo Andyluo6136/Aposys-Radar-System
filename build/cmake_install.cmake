@@ -1,4 +1,4 @@
-# Install script for directory: /home/aposys1/Aposys-Radar-System
+# Install script for directory: /home/aposys2/Documents/pb11_test/Aposys-Radar-System
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/aposys1/Aposys-Radar-System/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/aposys2/Documents/pb11_test/Aposys-Radar-System/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
