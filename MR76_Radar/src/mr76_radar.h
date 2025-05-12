@@ -11,7 +11,7 @@ class MR76 {
 
 
 
-    public :
+    private:
     
     struct mr76_data{
     uint8_t id;     
