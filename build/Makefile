@@ -130,77 +130,29 @@ radar_modules/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/build
 .PHONY : radar_modules/fast
 
-MR76_Radar/src/mr76_radar.o: MR76_Radar/src/mr76_radar.cpp.o
-.PHONY : MR76_Radar/src/mr76_radar.o
+Radar_Files/src/mr76_radar.o: Radar_Files/src/mr76_radar.cpp.o
+.PHONY : Radar_Files/src/mr76_radar.o
 
 # target to build an object file
-MR76_Radar/src/mr76_radar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.o
-.PHONY : MR76_Radar/src/mr76_radar.cpp.o
+Radar_Files/src/mr76_radar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.o
+.PHONY : Radar_Files/src/mr76_radar.cpp.o
 
-MR76_Radar/src/mr76_radar.i: MR76_Radar/src/mr76_radar.cpp.i
-.PHONY : MR76_Radar/src/mr76_radar.i
-
-# target to preprocess a source file
-MR76_Radar/src/mr76_radar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.i
-.PHONY : MR76_Radar/src/mr76_radar.cpp.i
-
-MR76_Radar/src/mr76_radar.s: MR76_Radar/src/mr76_radar.cpp.s
-.PHONY : MR76_Radar/src/mr76_radar.s
-
-# target to generate assembly for a file
-MR76_Radar/src/mr76_radar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/MR76_Radar/src/mr76_radar.cpp.s
-.PHONY : MR76_Radar/src/mr76_radar.cpp.s
-
-src/app/bindings.o: src/app/bindings.cpp.o
-.PHONY : src/app/bindings.o
-
-# target to build an object file
-src/app/bindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/app/bindings.cpp.o
-.PHONY : src/app/bindings.cpp.o
-
-src/app/bindings.i: src/app/bindings.cpp.i
-.PHONY : src/app/bindings.i
+Radar_Files/src/mr76_radar.i: Radar_Files/src/mr76_radar.cpp.i
+.PHONY : Radar_Files/src/mr76_radar.i
 
 # target to preprocess a source file
-src/app/bindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/app/bindings.cpp.i
-.PHONY : src/app/bindings.cpp.i
+Radar_Files/src/mr76_radar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.i
+.PHONY : Radar_Files/src/mr76_radar.cpp.i
 
-src/app/bindings.s: src/app/bindings.cpp.s
-.PHONY : src/app/bindings.s
-
-# target to generate assembly for a file
-src/app/bindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/app/bindings.cpp.s
-.PHONY : src/app/bindings.cpp.s
-
-src/test1.o: src/test1.cpp.o
-.PHONY : src/test1.o
-
-# target to build an object file
-src/test1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/test1.cpp.o
-.PHONY : src/test1.cpp.o
-
-src/test1.i: src/test1.cpp.i
-.PHONY : src/test1.i
-
-# target to preprocess a source file
-src/test1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/test1.cpp.i
-.PHONY : src/test1.cpp.i
-
-src/test1.s: src/test1.cpp.s
-.PHONY : src/test1.s
+Radar_Files/src/mr76_radar.s: Radar_Files/src/mr76_radar.cpp.s
+.PHONY : Radar_Files/src/mr76_radar.s
 
 # target to generate assembly for a file
-src/test1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/src/test1.cpp.s
-.PHONY : src/test1.cpp.s
+Radar_Files/src/mr76_radar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/radar_modules.dir/build.make CMakeFiles/radar_modules.dir/Radar_Files/src/mr76_radar.cpp.s
+.PHONY : Radar_Files/src/mr76_radar.cpp.s
 
 # Help Target
 help:
@@ -211,15 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... radar_modules"
-	@echo "... MR76_Radar/src/mr76_radar.o"
-	@echo "... MR76_Radar/src/mr76_radar.i"
-	@echo "... MR76_Radar/src/mr76_radar.s"
-	@echo "... src/app/bindings.o"
-	@echo "... src/app/bindings.i"
-	@echo "... src/app/bindings.s"
-	@echo "... src/test1.o"
-	@echo "... src/test1.i"
-	@echo "... src/test1.s"
+	@echo "... Radar_Files/src/mr76_radar.o"
+	@echo "... Radar_Files/src/mr76_radar.i"
+	@echo "... Radar_Files/src/mr76_radar.s"
 .PHONY : help
 
 
