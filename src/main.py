@@ -2,9 +2,6 @@ import sys
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../build"))
-sys.path.append(os.path.join(os.path.dirname(__file__), "can_files"))
-lib_path = os.path.join(os.path.dirname(__file__), "can_files", "libusbcan.so")
-print(f"Attempting to load libusbcan.so from: {lib_path}")
 
 import usbcan
 from ctypes import *
@@ -18,7 +15,7 @@ dir(radar_modules)
 rar = radar_modules.MR76()
 
 
-lib = cdll.LoadLibrary(lib_path)
+lib = cdll.LoadLibrary("./libusbcan.so")
 
 USBCAN_I = c_uint32(3)   # USBCAN-I/I+ 3
 USBCAN_II = c_uint32(4)  # USBCAN-II/II+ 4
