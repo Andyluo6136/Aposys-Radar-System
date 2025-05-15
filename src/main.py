@@ -6,7 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../build"))
 import usbcan
 from ctypes import *
 import threading
-
+import rclpy
 sys.path.append('build')
 
 import radar_modules
@@ -15,7 +15,7 @@ dir(radar_modules)
 rar = radar_modules.MR76()
 
 
-lib = cdll.LoadLibrary("./libusbcan.so")
+lib = cdll.LoadLibrary("./src/libusbcan.so")
 
 USBCAN_I = c_uint32(3)   # USBCAN-I/I+ 3
 USBCAN_II = c_uint32(4)  # USBCAN-II/II+ 4
@@ -45,6 +45,11 @@ else:
 
 # Initialize and start the channel
 print(MAX_CHANNELS)
+
+#initializes ros
+rclpy.init()
+
+
 for i in range(usbcan.MAX_CHANNELS):
     init_config = usbcan.ZCAN_CAN_INIT_CONFIG()
     init_config.AccCode = 0
@@ -65,6 +70,8 @@ for i in range(usbcan.MAX_CHANNELS):
         print("StartCAN(%d) fail" % i)
     else:
         print("StartCAN(%d) success" % i)
+
+
         
     thread = threading.Thread(target=usbcan.rx_thread, args=(DevType, DevIdx, i,))
     threads.append(thread) # independent receiving thread

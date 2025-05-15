@@ -1,0 +1,13 @@
+[0.007s] Invoking command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8
+[0.092s] -- Found pybind11: /usr/include (found version "2.9.1")
+[0.092s] -- Python include dirs: /usr/include/python3.10
+[0.093s] -- Configuring done
+[0.095s] -- Generating done
+[0.096s] -- Build files have been written to: /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System
+[0.109s] [35m[1mConsolidate compiler generated dependencies of target radar_modules[0m
+[0.119s] [100%] Built target radar_modules
+[0.127s] Invoked command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System' returned '0': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8
+[0.134s] Invoking command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System': /usr/bin/cmake --install /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System
+[0.139s] -- Install configuration: "Release"
+[0.139s] -- Installing: /home/aposys1/Aposys-Radar-System/install/Aposys-Radar-System/lib/radar_modules.cpython-310-x86_64-linux-gnu.so
+[0.141s] Invoked command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System' returned '0': /usr/bin/cmake --install /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System

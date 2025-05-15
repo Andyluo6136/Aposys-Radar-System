@@ -1,0 +1,9 @@
+-- Found pybind11: /usr/include (found version "2.9.1")
+-- Python include dirs: /usr/include/python3.10
+[31mCMake Error at CMakeLists.txt:60 (install):
+  install TARGETS given target "my_node" which does not exist.
+
+[0m
+-- Configuring incomplete, errors occurred!
+See also "/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System/CMakeFiles/CMakeOutput.log".
+gmake: *** [Makefile:181: cmake_check_build_system] Error 1

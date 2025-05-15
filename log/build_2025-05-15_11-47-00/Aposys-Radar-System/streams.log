@@ -1,0 +1,28 @@
+[0.005s] Invoking command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System': /usr/bin/cmake /home/aposys1/Aposys-Radar-System -DCMAKE_INSTALL_PREFIX=/home/aposys1/Aposys-Radar-System/install/Aposys-Radar-System
+[0.062s] -- The C compiler identification is GNU 11.4.0
+[0.111s] -- The CXX compiler identification is GNU 11.4.0
+[0.117s] -- Detecting C compiler ABI info
+[0.171s] -- Detecting C compiler ABI info - done
+[0.176s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.177s] -- Detecting C compile features
+[0.177s] -- Detecting C compile features - done
+[0.180s] -- Detecting CXX compiler ABI info
+[0.236s] -- Detecting CXX compiler ABI info - done
+[0.241s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.241s] -- Detecting CXX compile features
+[0.241s] -- Detecting CXX compile features - done
+[0.448s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter Development Development.Module Development.Embed 
+[0.479s] -- Performing Test HAS_FLTO
+[0.572s] -- Performing Test HAS_FLTO - Success
+[0.572s] -- Found pybind11: /usr/include (found version "2.9.1")
+[0.572s] -- Python include dirs: /usr/include/python3.10
+[0.574s] -- Configuring done
+[0.576s] -- Generating done
+[0.577s] -- Build files have been written to: /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System
+[0.579s] Invoked command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System' returned '0': /usr/bin/cmake /home/aposys1/Aposys-Radar-System -DCMAKE_INSTALL_PREFIX=/home/aposys1/Aposys-Radar-System/install/Aposys-Radar-System
+[0.581s] Invoking command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8
+[0.627s] [ 50%] [32mBuilding CXX object CMakeFiles/radar_modules.dir/radar_files/src/mr76_radar.cpp.o[0m
+[2.572s] [100%] [32m[1mLinking CXX shared module radar_modules.cpython-310-x86_64-linux-gnu.so[0m
+[2.657s] lto-wrapper: warning: using serial compilation of 2 LTRANS jobs
+[4.277s] [100%] Built target radar_modules
+[4.284s] Invoked command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System' returned '0': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8

@@ -1,0 +1,4 @@
+-- Found pybind11: /usr/include (found version "2.9.1")
+-- Python include dirs: /usr/include/python3.10
+-- Configuring incomplete, errors occurred!
+See also "/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System/CMakeFiles/CMakeOutput.log".

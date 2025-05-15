@@ -71,7 +71,7 @@ void MR76::update_data(){
     is_ready = is_object_complete;
     object_detected = object_counter;
     for (int iter = 0; iter < object_counter; iter++){
-        object1[iter]=_object[iter];
+        object[iter]=_object[iter];
     }
     this->total_objects = _total_objects;
     this->cycles = _cycles;
@@ -146,5 +146,5 @@ PYBIND11_MODULE(radar_modules, m) {
         .def_readwrite("object_detected", &MR76::object_detected)
         .def_readwrite("cycles", &MR76::cycles)
         .def_readwrite("is_object_complete", &MR76::is_object_complete)
-        .def_readwrite("object1", &MR76::object1);  // Make sure name matches variable
+        .def_readwrite("object", &MR76::object);  // Make sure name matches variable
 }

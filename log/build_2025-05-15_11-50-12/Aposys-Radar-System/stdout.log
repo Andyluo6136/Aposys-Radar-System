@@ -1,0 +1,9 @@
+-- Found pybind11: /usr/include (found version "2.9.1")
+-- Python include dirs: /usr/include/python3.10
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System
+[35m[1mConsolidate compiler generated dependencies of target radar_modules[0m
+[100%] Built target radar_modules
+-- Install configuration: "Release"
+-- Installing: /home/aposys1/Aposys-Radar-System/install/Aposys-Radar-System/lib/radar_modules.cpython-310-x86_64-linux-gnu.so

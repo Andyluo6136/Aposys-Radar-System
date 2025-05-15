@@ -4,13 +4,15 @@ import threading
 import time
 import sys
 sys.path.append('build')
-import radar_modules
 
+import radar_modules
+import rclpy
+from ros_files.ros_files.rviz_node import rviz_node
 dir(radar_modules)
 
 radar = radar_modules.MR76()
 data = radar_modules.mr76_data()
-lib = cdll.LoadLibrary("./libusbcan.so")
+lib = cdll.LoadLibrary("./src/libusbcan.so")
 
 USBCAN_I = c_uint32(3)   # USBCAN-I/I+ 3
 USBCAN_II = c_uint32(4)  # USBCAN-II/II+ 4
@@ -85,6 +87,9 @@ def GetDeviceInf(DeviceType, DeviceIndex):
 
 
 def rx_thread(DEVCIE_TYPE, DevIdx, chn_idx):
+
+    #creates a publisher node that communicates with the rviz2 thing 
+    node = rviz_node()
     global g_thd_run
     while g_thd_run == 1:
         time.sleep(0.1)
@@ -108,10 +113,19 @@ def rx_thread(DEVCIE_TYPE, DevIdx, chn_idx):
                     print(" remote frame", end='')
                 print("")
                 #print(list(can[i].Data))
+                
                 radar.parse_data(can[i].ID, can[i].DataLen, can[i].Data[0], can[i].Data[1], can[i].Data[2], can[i].Data[3], can[i].Data[4], can[i].Data[5], can[i].Data[6], can[i].Data[7])
-                for i in range(radar.total_objects-1):
-                    print(i)
-                    print("distance: ",radar.object1[i].distance_long)
+                for j in range(radar.total_objects):
+                    
+                    #creates a marker for this object
+                    node.publish_marker(radar.object[j].distance_long, radar.object[j].distance_lat, j)
+                    node.delete(j)
+
+                    print(j)
+                    print("distance: ",radar.object[j].distance_long)
+                
+                rclpy.spin_once(node, timeout_sec=0)
+
 
                 
 

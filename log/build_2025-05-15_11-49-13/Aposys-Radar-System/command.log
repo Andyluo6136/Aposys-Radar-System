@@ -1,0 +1,2 @@
+Invoking command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8
+Invoked command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System' returned '2': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8

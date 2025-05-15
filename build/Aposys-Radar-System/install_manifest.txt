@@ -1,0 +1,1 @@
+/home/aposys1/Aposys-Radar-System/install/Aposys-Radar-System/lib/radar_modules.cpython-310-x86_64-linux-gnu.so

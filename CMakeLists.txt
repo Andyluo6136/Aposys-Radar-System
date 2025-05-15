@@ -57,3 +57,7 @@ target_sources(radar_modules PRIVATE ${LIB_SRC})
 target_link_libraries(radar_modules PRIVATE ${COMMON_LIBRARIES})
 target_include_directories(radar_modules PRIVATE ${COMMON_INCLUDES})
 
+install(TARGETS
+  radar_modules
+  LIBRARY DESTINATION lib  # For shared libraries like Python modules
+)

@@ -1,0 +1,11 @@
+[0.007s] Invoking command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8
+[0.091s] -- Found pybind11: /usr/include (found version "2.9.1")
+[0.092s] -- Python include dirs: /usr/include/python3.10
+[0.092s] [31mCMake Error at CMakeLists.txt:60 (install):
+[0.092s]   install TARGETS given target "my_node" which does not exist.
+[0.092s] 
+[0.092s] [0m
+[0.093s] -- Configuring incomplete, errors occurred!
+[0.093s] See also "/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System/CMakeFiles/CMakeOutput.log".
+[0.094s] gmake: *** [Makefile:181: cmake_check_build_system] Error 1
+[0.095s] Invoked command in '/home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System' returned '2': /usr/bin/cmake --build /home/aposys1/Aposys-Radar-System/build/Aposys-Radar-System -- -j8 -l8
