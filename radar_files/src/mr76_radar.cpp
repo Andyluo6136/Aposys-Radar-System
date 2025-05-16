@@ -51,7 +51,7 @@ void MR76::parse_data(int id, int len, unsigned int int1, unsigned int int2, uns
         _object[object_counter] = _object_data;
         object_counter ++;
 
-        std::cout<<static_cast<int>(_object_data.distance_long) <<std::endl;
+        // std::cout<<static_cast<int>(_object_data.distance_long) <<std::endl;
 
 
     }

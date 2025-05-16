@@ -2,6 +2,7 @@ import platform
 from ctypes import *
 import threading
 import time
+import math
 import sys
 sys.path.append('build')
 import radar_modules
@@ -83,6 +84,18 @@ def GetDeviceInf(DeviceType, DeviceIndex):
         print("Exception on readboardinfo")
         raise
 
+def fov_filter(i):
+    fov_angle = 30 # <----------------------------------------------------------------------------------------- CHANGE THIS NUMBER TO CHANGE THE FOV
+    angle = 90 - ((math.atan2(radar.object1[i].distance_long, radar.object1[i].distance_lat) * 180) / math.pi)
+    if abs(angle) <= fov_angle/2:
+        print("radius: ", math.sqrt((radar.object1[i].distance_long)**2 + (radar.object1[i].distance_lat)**2))
+        print("distance_long: ", radar.object1[i].distance_long)
+        print("distance_lat: ", radar.object1[i].distance_lat)
+    
+    #testing purposes
+    else:
+        print("helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo!")
+
 
 def rx_thread(DEVCIE_TYPE, DevIdx, chn_idx):
     global g_thd_run
@@ -109,9 +122,12 @@ def rx_thread(DEVCIE_TYPE, DevIdx, chn_idx):
                 print("")
                 #print(list(can[i].Data))
                 radar.parse_data(can[i].ID, can[i].DataLen, can[i].Data[0], can[i].Data[1], can[i].Data[2], can[i].Data[3], can[i].Data[4], can[i].Data[5], can[i].Data[6], can[i].Data[7])
-                for i in range(radar.total_objects-1):
+                for i in range(radar.total_objects):
                     print(i)
-                    print("distance: ",radar.object1[i].distance_long)
+
+                    fov_filter(i)
+
+                    
 
                 
 
